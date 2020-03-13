@@ -41,10 +41,12 @@ workflows:
   build-master:
     jobs:
       - build:
+          context: Docker Context
           filters:
             branches:
               only: master
       - publish-latest:
+          context: Docker Context
           requires:
             - build
           filters:
