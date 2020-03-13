@@ -17,7 +17,7 @@ jobs:
           command: docker build -t ${REPO_NAME}/${IMAGE_NAME}:latest .
       - run:
           name: Archive Docker Image
-          command: docker save -o image.tar ${IMAGE_NAME}
+          command: docker save -o image.tar ${REPO_NAME}/${IMAGE_NAME}:latest
       - persist_to_workspace:
           root: .
           paths:
